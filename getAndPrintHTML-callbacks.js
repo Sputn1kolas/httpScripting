@@ -9,25 +9,27 @@ var requestOptions = {
     path: '/http-examples/step1.html'
   };
 
+function printHTML(html) {
+  console.log(html);
+}
 
 
-var htmlString = ""
-
-function getAndPrintHTML(options) {
+function getAndPrintHTML(options, callback) {
+  var htmlString = ""
 
   https.get(options, function (response) {
 
     response.setEncoding('utf8');
 
-    response.on('data', function (data) {
+    response.on('data', function(data){
       htmlString += data;
     });
 
-    response.on('end', function() {
-      console.log(htmlString, "\n", 'Stream complete.');
+    response.on('end', function(){
+      callback(htmlString);
     });
   });
 }
 
-getAndPrintHTML(requestOptions)
+getAndPrintHTML(requestOptions, printHTML)
 
