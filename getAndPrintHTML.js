@@ -4,9 +4,12 @@ var fs = require('fs');
 //console log each chunk of data as it is recieved
 // need to invoke the function.
 
-htmlString = ""
 
-function getAndPrintHTMLChunks() {
+var htmlString = ""
+
+function getAndPrintHTML() {
+
+
   var requestOptions = {
     host: 'sytantris.github.io',
     path: '/http-examples/step1.html'
@@ -21,17 +24,16 @@ function getAndPrintHTMLChunks() {
 
     // the callback is invoked when a `data` chunk is received
     response.on('data', function (data) {
-      console.log(data);
+      htmlString += data;
     });
 
     // the callback is invoked when all of the data has been received
     // (the `end` of the stream)
     response.on('end', function() {
-      console.log('Stream complete.');
+      console.log(htmlString, "\n", 'Stream complete.');
     });
-
   });
 }
 
 
-getAndPrintHTMLChunks()
+getAndPrintHTML()
