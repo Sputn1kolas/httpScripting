@@ -1,0 +1,19 @@
+{
+  "name": "printshtml",
+  "version": "0.0.1",
+  "description": "Reads and Prints Html from a host and path",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Sputn1kolas/httpScripting.git"
+  },
+  "author": "me",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sputn1kolas/httpScripting/issues"
+  },
+  "homepage": "https://github.com/Sputn1kolas/httpScripting#readme"
+}
